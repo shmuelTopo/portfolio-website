@@ -1,0 +1,34 @@
+.languagesAndTools {
+  padding: 0;
+  /* display: flex;
+  flex-wrap: wrap;*/
+  font-weight: 100;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
+  grid-gap: 1em;
+  justify-content: space-between;
+  max-width: 100%;
+  font-size: 16px;
+}
+
+.languagesAndTools li {
+  list-style-type: none;
+}
+
+@media screen and (max-width: 445px) {
+  .languagesAndTools {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 395px) {
+  .languagesAndTools {
+    font-size: 0.7em;
+  }
+}
+
+@media screen and (max-width: 345px) {
+  .languagesAndTools {
+    font-size: 0.6em;
+  }
+}

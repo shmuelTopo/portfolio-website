@@ -1,0 +1,47 @@
+.home {
+  padding-top: var(--padding-home-top);
+  padding-bottom: 3em;
+}
+
+h1 {
+  font-size: 2.3em;
+  margin: 0;
+}
+
+h1 span {
+  display: block;
+}
+
+h1 .description {
+  margin-top: 0.5em;
+  color: var(--primary-color)
+}
+
+.home .downloadBtn {
+  cursor: pointer;
+  padding: 0.7em 1.5em;
+  border-radius: 0.4em;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  text-decoration: none;
+  gap: 0.5em;
+}
+
+.home a .icon {
+  height: 1.5em;
+  width: 1.5em;
+  color: var(--background-color);
+}
+
+.home a:hover {
+  background-color: var(--primary-color-hover);
+}
+
+.home-description {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}

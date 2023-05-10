@@ -1,0 +1,93 @@
+nav {
+  z-index: 40;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  background-color: var(--background-color);
+  box-shadow: var(--shadow);
+  font-size: 16px;
+}
+
+nav .container {
+  height: var(--navbar-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5em;
+  padding: 0.5em 0;
+}
+
+.left-side {
+  display: flex;
+  gap: 2em;
+  align-items: center;
+  flex-direction: row;
+}
+
+.fullNameScript {
+  color: inherit;
+  text-decoration: inherit;
+  font-size: 2.5em;
+  line-height: 2em;
+  user-select: none;
+  font-family: "Source Code Pro", monospace;
+}
+
+.fullNameScript span {
+  font-family: Sacramento, cursive;
+}
+
+@media screen and (max-width: 950px) {
+  .fullNameScript {
+    font-size: 2.35em;
+  }
+}
+
+@media screen and (max-width: 552px) {
+  .left-side {
+    gap: 1em;
+  }
+}
+
+@media screen and (max-width: 512px) {
+  .fullNameScript {
+    font-size: 2.2em;
+  }
+}
+
+@media screen and (max-width: 452px) {
+  .fullNameScript {
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 416px) {
+  .fullNameScript {
+    font-size: 1.75em;
+  }
+
+  .left-side {
+    gap: 0.5em;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .fullNameScript {
+    font-size: 1.5em;
+  }
+
+  .left-side {
+    gap: 0.5em;
+  }
+}
+
+@media screen and (max-width: 346px) {
+  .fullNameScript {
+    font-size: 1.35em;
+  }
+
+  .left-side {
+    gap: 0.5em;
+  }
+}

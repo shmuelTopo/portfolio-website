@@ -1,0 +1,8 @@
+.App > * {
+  padding-left: var(--padding-x);
+  padding-right: var(--padding-x);
+}
+
+#home {
+  background-color: var(--surface-color);
+}
