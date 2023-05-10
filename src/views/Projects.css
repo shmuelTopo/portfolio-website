@@ -1,0 +1,23 @@
+.project-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-title-and-links {
+  display: flex;
+  align-items: center;
+  padding: 2em 0.5em;
+}
+
+.project-title {
+  flex: 1;
+  font-size: 2em;
+  margin: 0;
+}
+
+.project-title-and-links a {
+  background: none;
+  cursor: pointer;
+  height: fit-content;
+}
