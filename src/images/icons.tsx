@@ -3,7 +3,7 @@ export const NewTabLink = () => {
     <svg
       stroke="currentColor"
       fill="currentColor"
-      stroke-width="0"
+      strokeWidth="0"
       viewBox="0 0 512 512"
       aria-label="project link"
       height="20"
@@ -20,7 +20,7 @@ export const GitHubIcon = () => {
     <svg
       stroke="currentColor"
       fill="currentColor"
-      stroke-width="0"
+      strokeWidth="0"
       viewBox="0 0 496 512"
       aria-label="github"
       height="23"

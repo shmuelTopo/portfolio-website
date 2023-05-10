@@ -1,13 +1,22 @@
 .project-box {
   width: 100%;
+  display: flex;  
+  flex-direction: column;
+  background-color: var(--surface-color);
+  border-radius: 0.5em;  
+}
+
+.project-info {
   display: flex;
   flex-direction: column;
+  gap: 0.5em;
+  padding: 0.5em;
 }
 
 .project-title-and-links {
   display: flex;
+  gap: 0.5rem;
   align-items: center;
-  padding: 2em 0.5em;
 }
 
 .project-title {
@@ -20,4 +29,20 @@
   background: none;
   cursor: pointer;
   height: fit-content;
+  color: var(--link-color);
+}
+
+.project-chips {
+  display: flex;
+  gap: 0.3em;
+}
+
+.project-box hr {
+  width: 95%;
+  border: 1px solid var(--text-color-faded)!important;
+}
+
+.project-description {
+  padding: 0;
+  margin: 0;
 }

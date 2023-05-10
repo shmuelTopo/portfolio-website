@@ -1,85 +1,89 @@
 import './TechBox.css'
 
+import type { ToolTechIcon } from '../images/TechAndToolsIcons'
+import * as Icons from '../images/TechAndToolsIcons'
+
 export interface TechItem {
-  size: "lg" | "sm";
-  name: TechItemName
+  size: 'lg' | 'sm'
+  name: string
+  color : "original" | "current" 
+  Icon: ToolTechIcon | undefined
 }
 
-export type TechItemName = (typeof techItems)[number]["name"];
-
-function TechBox({ name, size }: TechItem) {
+function TechBox({ Icon, name, size, color}: TechItem) {
+  if (!Icon) throw new Error('there is no icon')
   return (
     <div className={`tech-box  ${size}`}>
-      <img
-        alt={name + "-icon"}
-        src={techItems.find((ti) => ti.name === name)?.icon}
-        className="tech-box-icon"
-      />
-      <h4 className="tech-box-title">{name}</h4>
+      <div className='icon'>
+        <Icon color={color} />
+      </div>
+      <h4 className='tech-box-title'>{name}</h4>
     </div>
-  );
+  )
 }
 
-export default TechBox;
+export default TechBox
+export type TechItemName = (typeof techItems)[number]['name']
+
 export const techItems = [
   {
-    name: "Typescript",
-    icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg",
+    name: 'Typescript',
+    icon: Icons.TypescriptIcon
   },
   {
-    name: "Express",
-    icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg",
+    name: 'Express',
+    icon: Icons.ExpressIcon
   },
   {
-    name: "NodeJS",
-    icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg",
+    name: 'NodeJS',
+    icon: Icons.NodeIcon
   },
   {
-    name: "HTML",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+    name: 'HTML',
+    icon: Icons.HTMLIcon
   },
   {
-    name: "CSS",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg",
+    name: 'CSS',
+    icon: Icons.CssIcon
   },
   {
-    name: "JavaScript",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    name: 'JavaScript',
+    icon: Icons.JavascriptIcon
   },
   {
-    name: "Git",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-plain.svg",
+    name: 'Git',
+    icon: Icons.GitIcon
   },
   {
-    name: "MySql",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-plain.svg",
+    name: 'MySql',
+    icon: Icons.MySqlIcon
   },
   {
-    name: "Postgres",
-    icon: "https://raw.githubusercontent.com/devicons/devicon/v2.15.1/icons/postgresql/postgresql-plain.svg",
+    name: 'Postgres',
+    icon: Icons.PostgresIcon
   },
   {
-    name: "Mongo DB",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-plain.svg",
+    name: 'Mongo DB',
+    icon: Icons.MongoDbIcon
   },
   {
-    name: "Python",
-    icon: "https://raw.githubusercontent.com/devicons/devicon/v2.15.1/icons/python/python-plain.svg",
+    name: 'Python',
+    icon: Icons.PythonIcon
   },
   {
-    name: "VSCode",
-    icon: "https://raw.githubusercontent.com/devicons/devicon/v2.15.1/icons/vscode/vscode-plain.svg",
+    name: 'VSCode',
+    icon: Icons.VSCodeIcon
   },
   {
-    name: "Linux",
-    icon: "https://raw.githubusercontent.com/devicons/devicon/v2.15.1/icons/linux/linux-plain.svg",
+    name: 'Linux',
+    icon: Icons.LinuxIcon
   },
   {
-    name: "React",
-    icon: "https://raw.githubusercontent.com/devicons/devicon/v2.15.1/icons/react/react-original.svg",
+    name: 'React',
+    icon: Icons.ReactIcon
   },
   {
-    name: "Svelte",
-    icon: "https://raw.githubusercontent.com/devicons/devicon/v2.15.1/icons/svelte/svelte-plain.svg",
-  },
-] as const;
+    name: 'Svelte',
+    icon: Icons.SvelteIcon
+  }
+] as const

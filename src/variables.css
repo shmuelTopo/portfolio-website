@@ -7,7 +7,9 @@
   --accent-color: #1fb2a5;
   --secondary-color: #87e3fa;
   --text-color: #3b3d40;
-  --link-color: #345055;
+  --text-color-faded: #3b3d402e;
+
+  --link-color: #5b56e5;
   --shadow: -3px 3px 15px -5px rgba(0, 0, 0, 0.5);
 
   --max-width: 1200px;
@@ -26,19 +28,25 @@ html[data-theme="light"] {
   --surface-color-hover: #6ae1ff;
   --primary-color: #3b82f6;
   --primary-color-hover: #609dff;
-  --secondary-color: #87e3fa;
+  --secondary-color: #66e0ff;
   --text-color: #3b3d40;
+  --text-color-faded: #3b3d402e;
+
+  --link-color: #5b56e5;
   --shadow: -3px 3px 15px -5px rgba(0, 0, 0, 0.5);
 }
 
 html[data-theme="dark"] {
   --background-color: #374151;
-  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color: #424c5e;
   --surface-color-hover: rgba(255, 255, 255, 0.2);
   --primary-color: #6f9eaf;
   --primary-color-hover: #82aebe;
-  --secondary-color: hsla(0, 0%, 100%, 0.1);
-  --text-color: #ffffff;
+  --secondary-color: hsla(0, 0%, 100%, 0.134);
+  --text-color: #ececec;
+  --text-color-faded: #ffffff2e;
+
+  --link-color: #7d8ef0;
   --shadow: -3px 3px 15px -5px rgba(194, 194, 194, 0.4);
 }
 
@@ -53,6 +61,7 @@ html[data-theme="dark"] {
     --padding-x: 2rem;
     --full-name-navbar-size: 2.5em;
     --padding-home-top: 2em;
+    --navbar-height: 70px;
   }
 }
 

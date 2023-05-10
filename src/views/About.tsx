@@ -15,7 +15,6 @@ const About = () => {
         dedicated and hard-working developer who is eager to learn and grow,
         look no further!
       </p>
-      <h2>Technologies and Tools</h2>
       <LanguagesAndTools />
     </div>
   );
