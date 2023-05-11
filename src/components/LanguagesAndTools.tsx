@@ -1,6 +1,5 @@
 import './LanguagesAndTools.css'
 import TechBox, { techItems } from './TechBox'
-import { useState } from 'react'
 
 function LanguagesAndTools() {
   return (

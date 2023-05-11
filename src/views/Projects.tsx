@@ -6,6 +6,7 @@ import { GitHubIcon, NewTabLink } from '../images/icons'
 
 interface Project {
   items: TechItemName[]
+  keyFeatures?: string[]
   imgSrc: string
   title: string
   githubLink?: string
@@ -15,24 +16,69 @@ interface Project {
 
 const projects: Project[] = [
   {
-    // items: [{ name: 'React', icon: ReactIcon }, {name: "Postgres", icon: PostgresIcon}],
-    items: ['React',"Postgres"],
-    imgSrc: 'https://source.unsplash.com/npxXWgQ33ZQ',
     title: 'Recipe website',
+    description: `I developed a recipe website using TypeScript, Express, and Postgres. It provides a seamless and enjoyable recipe browsing experience.`,
+    keyFeatures: [
+      `Recipe Search: Users can search for recipes using keywords. The server connects to an external recipe API to fetch relevant recipes.`,
+      `Caching: Fetched recipes are temporarily stored in PostgreSQL for 1 hour. This reduces repetitive API calls and improves performance.`,
+      `Recipe Retrieval: the server directly retrieves specific details from the PostgreSQL database, if it is still in cached. If not, Express seamlessly makes another API request to obtain the necessary details.`
+    ],
+    items: ['Typescript', 'Express', 'React', 'Postgres'],
+    imgSrc: 'https://source.unsplash.com/7X1gURtGScE',
     githubLink: 'https://github.com/shmuelTopo/recipe-app',
-    liveLink: 'https://projects.shmuel.dev/recipes',
-    description: 'Recipe website, where users can search recipes, and add their own, save them to their watch list and so on'
+    liveLink: 'https://projects.shmuel.dev/recipes'
+  },
+  {
+    title: 'Chess website',
+    description: `I developed a recipe website using TypeScript, Express, and Postgres. It provides a seamless and enjoyable recipe browsing experience.`,
+    keyFeatures: [
+      `Recipe Search: Users can search for recipes using keywords. The server connects to an external recipe API to fetch relevant recipes.`,
+      `Caching: Fetched recipes are temporarily stored in PostgreSQL for 1 hour. This reduces repetitive API calls and improves performance.`,
+      `Recipe Retrieval: the server directly retrieves specific details from the PostgreSQL database, if it is still in cached. If not, Express seamlessly makes another API request to obtain the necessary details.`
+    ],
+    items: ['Typescript', 'Express', 'React', 'Postgres'],
+    imgSrc: 'https://source.unsplash.com/fzOITuS1DIQ',
+    githubLink: 'https://github.com/shmuelTopo/recipe-app',
+    liveLink: 'https://projects.shmuel.dev/recipes'
+  },
+  {
+    title: 'Maps website',
+    description: `I developed a recipe website using TypeScript, Express, and Postgres. It provides a seamless and enjoyable recipe browsing experience.`,
+    keyFeatures: [
+      `Recipe Search: Users can search for recipes using keywords. The server connects to an external recipe API to fetch relevant recipes.`,
+      `Caching: Fetched recipes are temporarily stored in PostgreSQL for 1 hour. This reduces repetitive API calls and improves performance.`,
+      `Recipe Retrieval: the server directly retrieves specific details from the PostgreSQL database, if it is still in cached. If not, Express seamlessly makes another API request to obtain the necessary details.`
+    ],
+    items: ['Typescript', 'Express', 'React', 'Postgres'],
+    imgSrc: 'https://source.unsplash.com/SFRw5GChoLA',
+    githubLink: 'https://github.com/shmuelTopo/recipe-app',
+    liveLink: 'https://projects.shmuel.dev/recipes'
+  },
+  {
+    title: 'Blog website',
+    description: `I developed a recipe website using TypeScript, Express, and Postgres. It provides a seamless and enjoyable recipe browsing experience.`,
+    keyFeatures: [
+      `Recipe Search: Users can search for recipes using keywords. The server connects to an external recipe API to fetch relevant recipes.`,
+      `Caching: Fetched recipes are temporarily stored in PostgreSQL for 1 hour. This reduces repetitive API calls and improves performance.`,
+      `Recipe Retrieval: the server directly retrieves specific details from the PostgreSQL database, if it is still in cached. If not, Express seamlessly makes another API request to obtain the necessary details.`
+    ],
+    items: ['Typescript', 'Express', 'React', 'Postgres'],
+    imgSrc: 'https://source.unsplash.com/npxXWgQ33ZQ',
+    githubLink: 'https://github.com/shmuelTopo/recipe-app',
+    liveLink: 'https://projects.shmuel.dev/recipes'
   }
 ]
 
 export default function Projects() {
   return (
-    <div>
+    <>
       <h2>Projects</h2>
-      {projects.map((project) => (
-        <ProjectBox key={project.title} projectInfo={project}></ProjectBox>
-      ))}
-    </div>
+      <div className='projects-container'>
+        {projects.map((project) => (
+          <ProjectBox key={project.title} projectInfo={project}></ProjectBox>
+        ))}
+      </div>
+    </>
   )
 }
 
@@ -56,11 +102,21 @@ function ProjectBox({ projectInfo }: { projectInfo: Project }) {
         </div>
         <div className='project-chips'>
           {projectInfo.items.map((item) => {
-            return <TechBox color='current' key={item} Icon={techItems.find(t => t.name === item)?.icon} name={item} size='sm' />
+            return <TechBox color='current' key={item} Icon={techItems.find((t) => t.name === item)?.icon} name={item} size='sm' />
           })}
         </div>
         <hr />
         <p className='project-description'>{projectInfo.description}</p>
+        {projectInfo.keyFeatures && (
+          <>
+            <h5>Key Features:</h5>
+            <ol>
+              {projectInfo.keyFeatures?.map((f, i) => (
+                <li key={i}>{f}</li>
+              ))}
+            </ol>
+          </>
+        )}
       </div>
     </div>
   )
