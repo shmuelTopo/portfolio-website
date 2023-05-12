@@ -8,7 +8,7 @@
 }
 
 .tech-box:hover {
-  background-color: var(--surface-color-hover);
+  background-color: var(--secondary-color-hover);
 }
 
 .tech-box .icon {
@@ -26,7 +26,7 @@
 }
 
 .tech-box.sm {
-  font-size: 0.6em;
+  font-size: 0.7em;
   gap: 0.5em;
   padding: 0.29em 0.5em;
 }
@@ -36,6 +36,6 @@
   margin: 0;
 }
 
-.tech-box.sm .icon {
-  max-width: 1em;
+.tech-box.sm .chip-icon {
+  display: inline-block;
 }

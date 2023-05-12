@@ -1,5 +1,5 @@
 import './LanguagesAndTools.css'
-import TechBox, { techItems } from './TechBox'
+import IconChip, { techItems } from './IconChip'
 
 function LanguagesAndTools() {
   return (
@@ -8,7 +8,7 @@ function LanguagesAndTools() {
 
       <ul className='languagesAndTools'>
         {techItems.map((item) => (
-          <TechBox color={"original"} key={item.name} name={item.name} Icon={item.icon} size='lg' />
+          <IconChip color={'original'} key={item.name} name={item.name} Icon={item.icon} size='lg' />
         ))}
       </ul>
     </>

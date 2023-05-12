@@ -18,16 +18,14 @@
   height: fit-content;
 }
 
-.social-list li:hover {
-  background-color: var(--primary-color);
-  transform: scale(1.1);
+.social-list-icon {
+  fill: var(--text-color-faded);
+  width: 1.8em;
 }
 
-.social-list svg {
-  color: var(--primary-color);
-  width: 2em;
+.social-list-icon:hover {
+  fill: var(--text-color);
+  transform: scale(1.2);
 }
 
-.social-list li:hover svg{
-  color: var(--background-color);
-}
+

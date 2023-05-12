@@ -1,5 +1,5 @@
-export const LinuxIconOriginal = () => (
-  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'>
+export const LinuxIconOriginal = ({className, width}: {className?: string, width?: number}) => (
+  <svg xmlns='http://www.w3.org/2000/svg' className={className || ''} width={width || 50} viewBox='0 0 128 128'>
     <radialGradient
       id='linux-original-a'
       cx='-992.915'

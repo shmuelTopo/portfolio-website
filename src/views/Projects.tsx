@@ -1,8 +1,8 @@
 import './Projects.css'
-import TechBox from '../components/TechBox'
-import type { TechItemName } from '../components/TechBox'
-import { techItems } from '../components/TechBox'
-import { GitHubIcon, NewTabLink } from '../images/icons'
+import IconChip from '../components/IconChip'
+import type { TechItemName } from '../components/IconChip'
+import { techItems } from '../components/IconChip'
+import { GitHubIcon, NewTabLink } from '../images/Icons'
 
 interface Project {
   items: TechItemName[]
@@ -91,18 +91,28 @@ function ProjectBox({ projectInfo }: { projectInfo: Project }) {
           <h4 className='project-title'>{projectInfo.title}</h4>
           {projectInfo.liveLink && (
             <a href={projectInfo.liveLink} target='_blank' rel='noreferrer'>
-              <NewTabLink />
+              <NewTabLink className='icon' />
             </a>
           )}
           {projectInfo.githubLink && (
             <a href={projectInfo.githubLink} target='_blank' rel='noreferrer'>
-              <GitHubIcon />
+              <GitHubIcon className='icon' />
             </a>
           )}
         </div>
         <div className='project-chips'>
           {projectInfo.items.map((item) => {
-            return <TechBox color='current' key={item} Icon={techItems.find((t) => t.name === item)?.icon} name={item} size='sm' />
+            return (
+              <IconChip
+                className='icon-chip'
+                width={20}
+                color='original'
+                key={item}
+                Icon={techItems.find((t) => t.name === item)?.icon}
+                name={item}
+                size='sm'
+              />
+            )
           })}
         </div>
         <hr />

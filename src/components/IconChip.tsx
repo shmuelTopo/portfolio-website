@@ -1,28 +1,30 @@
-import './TechBox.css'
+import './IconChip.css'
 
-import type { ToolTechIcon } from '../images/TechAndToolsIcons'
-import * as Icons from '../images/TechAndToolsIcons'
+import type { ToolTechIcon } from '../images/ToolsIcons'
+import * as Icons from '../images/ToolsIcons'
 
 export interface TechItem {
   size: 'lg' | 'sm'
   name: string
-  color : "original" | "current" 
-  Icon: ToolTechIcon | undefined
+  color: 'original' | 'current'
+  Icon: ToolTechIcon | undefined,
+  width?: number,
+  className?: string
 }
 
-function TechBox({ Icon, name, size, color}: TechItem) {
+function IconChip({ Icon, name, size, color, width, className }: TechItem) {
   if (!Icon) throw new Error('there is no icon')
   return (
     <div className={`tech-box  ${size}`}>
-      <div className='icon'>
-        <Icon color={color} />
+      <div className='chip-icon'>
+        <Icon className={className} width={ width || (size === 'lg' ? 50 : 30)} color={color} />
       </div>
       <h4 className='tech-box-title'>{name}</h4>
     </div>
   )
 }
 
-export default TechBox
+export default IconChip
 export type TechItemName = (typeof techItems)[number]['name']
 
 export const techItems = [
