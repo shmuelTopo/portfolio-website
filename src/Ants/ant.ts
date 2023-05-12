@@ -5,7 +5,6 @@ import { ants } from './antsController'
 import './ants.css'
 
 import antImgSrc from './images/ant.png'
-console.log(antImgSrc)
 const ANT_IMAGE = new Image()
 ANT_IMAGE.src = antImgSrc
 
@@ -22,6 +21,8 @@ export default class Ant {
   private yDir: 'up' | 'down'
   private xDir: 'left' | 'right'
   private steps: number
+  private goHome: boolean = false
+
   constructor() {
     //Position of ant on the canvas, at first position will be in the center
     this.x = 0
@@ -44,24 +45,28 @@ export default class Ant {
     const dy = getRandomDelta()
     const dx = getRandomDelta()
 
+    let yDir = this.yDir
+    let xDir = this.xDir
+
+    if(this.goHome) {
+      yDir = "down"
+      xDir = "left"
+    }
+
     this.steps++
 
-    console.log('steps', this.steps)
     if (this.steps % 3 === 0) {
-      console.log('this.steps')
       this.yDir = Math.round(Math.random()) ? 'up' : 'down'
       this.xDir = Math.round(Math.random()) ? 'left' : 'right'
     }
 
-    console.log(this.xDir, this.dx, this.yDir, this.dy)
-
-    if (this.yDir === 'up') {
+    if (yDir === 'up') {
       this.newDy = -dy
     } else {
       this.newDy = dy
     }
 
-    if (this.xDir === 'right') {
+    if (xDir === 'right') {
       this.newDx = dx
     } else {
       this.newDx = -dx
@@ -99,7 +104,9 @@ export default class Ant {
     }
   }
 
-  draw() {
+  draw(goHome?: boolean) {
+    if(goHome) this.goHome = true
+
     if (this.numOfMovesToReset === 0) {
       this.resetDirection()
     }

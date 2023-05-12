@@ -10,14 +10,19 @@ ANT_HOLE.src = antHoleSrc
 let antsIntervals: ReturnType<typeof setInterval>
 let moveIntervals: ReturnType<typeof setInterval>
 
-let antsSpeed = 30
-let antsRate = 300
+const initialAntsRate = 1000
+let antSpeedIntervals = 20
 
-setInterval(() => {
-  console.log('speed', antsSpeed, 'rate', antsRate)
-}, 2000)
+let antsRate = initialAntsRate
+let antsAreMoving = false
+let goHome = false
+let theme: 'light' | 'dark'
+let setTheme: setThemeFunction | undefined
 
-export function initializeAntController() {
+type setThemeFunction = (newTheme: 'dark' | 'light') => void
+
+export function initializeAntController(setTheTheme: setThemeFunction) {
+  setTheme = setTheTheme
   //When the browser changes size change the canvas size
   window.addEventListener('resize', resizeCanvas)
 
@@ -30,21 +35,44 @@ export function initializeAntController() {
     ANT_HOLE.addEventListener('load', moveAnts)
   }
 
-  $('#reset').on('click', () => {
-    ants.length = 0
-    stop()
-    clearAnts()
-    localStorage.removeItem('ants')
-  })
+  return (newTheme: 'light' | 'dark' ) => {
+    console.log('theme change', newTheme)
+    theme = newTheme
+    if(theme === 'dark') stopAnts()
+  }
+}
 
-  stop()
-  start()
+window.addEventListener('click', (e) => {
+
+  if (e.pageX < 80 && getHeight() - e.pageY < 80) {
+    e.preventDefault()
+    if (!antsAreMoving) {
+      if(!global.confirm("Do you want to lunch Ant attack?\n" +
+      "note the more you click on the hole the more ants will come out\n" +
+      "also ants hate the dark so if you want to remove the ants just switch to dark mode!!")) return
+      antsAreMoving = true
+      goHome = false
+      console.log('setTheme', setTheme)
+      if(setTheme) setTheme('light')
+    }
+    
+
+    antsRate -= 10
+    start()
+  }
+})
+
+function stopAnts() {
+  antsRate = initialAntsRate
+  clearInterval(antsIntervals)
+  antsAreMoving = false
+  goHome = true
 }
 
 function start() {
-  console.log('starting')
+  stop()
   $('#startPause').text('Pause')
-
+  createAnt()
   antsIntervals = setInterval(() => {
     createAnt()
   }, antsRate)
@@ -52,13 +80,13 @@ function start() {
   //Set interval to redraw all the ants
   moveIntervals = setInterval(() => {
     moveAnts()
-  }, antsSpeed)
+  }, antSpeedIntervals)
 }
 
 function stop() {
+  console.log('stop the ants from moving')
   clearInterval(antsIntervals)
   clearInterval(moveIntervals)
-  $('#startPause').text('Start')
 }
 
 function createAnt() {
@@ -71,7 +99,7 @@ function moveAnts() {
   //Go through all the ants and draw their current position
   clearAnts()
   if (ants) {
-    ants.forEach((ant) => ant.draw())
+    ants.forEach((ant) => ant.draw(goHome))
   }
 }
 

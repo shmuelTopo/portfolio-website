@@ -7,7 +7,6 @@ let ctx: CanvasRenderingContext2D
 const body = document.body
 const html = document.documentElement
 
-
 function initializeCanvas() {
   if (!canvas || !ctx) {
     canvas = document.getElementById('theCanvas') as HTMLCanvasElement
@@ -53,7 +52,6 @@ export function getHeight() {
 
 //Function to resize the canvas based of browser size
 export function resizeCanvas() {
-  
   initializeCanvas()
   canvas.width = window.innerWidth
   canvas.height = getHeight()

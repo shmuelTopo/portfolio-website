@@ -7,7 +7,6 @@ import { useEffect, useRef, useState } from 'react'
 import View from './views/View'
 import SocialMediaLinks from './components/SocialMediaLinks'
 import Projects from './views/Projects'
-import { initializeAntController } from './Ants/antsController'
 
 const links = [
   { title: 'Home', href: 'home' },
@@ -21,7 +20,6 @@ function App() {
   const aboutRef = useRef<HTMLElement>(null)
   const contactRef = useRef<HTMLElement>(null)
   const projectsRef = useRef<HTMLElement>(null)
-  initializeAntController()
 
   const refs = [
     { name: 'home', ref: homeRef },
