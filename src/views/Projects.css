@@ -17,6 +17,8 @@
   background-color: var(--surface-color);
   border-radius: 0.5em;  
   padding: 0.5em;
+  color: var(--text-color);
+  text-decoration: none;
 }
 
 .project-box .icon {

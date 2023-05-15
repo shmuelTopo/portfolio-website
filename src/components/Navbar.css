@@ -38,9 +38,9 @@ nav .container {
   font-family: Sacramento, cursive;
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1000px) {
   .fullNameScript {
-    font-size: 2.35em;
+    font-size: 2.25em;
   }
 }
 

@@ -16,7 +16,7 @@
   --hamburger-width: 3em;
   --hamburger-height: 0.3em;
   --animation-timing: 200ms ease-in-out;
-  --navbar-height: 85px;
+  --navbar-height: 5rem;
   --padding-x: 1rem;
   --padding-home-top: 1em;
 }
@@ -54,7 +54,7 @@ html[data-theme='dark'] {
 
 @media screen and (min-width: 480px) {
   :root {
-    --padding-x: 2rem;
+    --padding-x: 1.5rem;
   }
 }
 
@@ -69,12 +69,12 @@ html[data-theme='dark'] {
 
 @media screen and (min-width: 1024px) {
   :root {
-    --padding-x: 4rem;
+    --padding-x: 3rem;
   }
 }
 
 @media screen and (min-width: 1280px) {
   :root {
-    --padding-x: 8rem;
+    --padding-x: 6rem;
   }
 }

@@ -84,7 +84,7 @@ export default function Projects() {
 
 function ProjectBox({ projectInfo }: { projectInfo: Project }) {
   return (
-    <div className='project-box'>
+    <a target='_blank' href={projectInfo.liveLink || projectInfo.githubLink || "#"} className='project-box' rel="noreferrer">
       <img src={projectInfo.imgSrc} alt={`${projectInfo.title} showcase`} />
       <div className='project-info'>
         <div className='project-title-and-links'>
@@ -128,6 +128,6 @@ function ProjectBox({ projectInfo }: { projectInfo: Project }) {
           </>
         )}
       </div>
-    </div>
+    </a>
   )
 }
