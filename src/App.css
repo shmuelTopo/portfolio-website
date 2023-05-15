@@ -3,6 +3,12 @@
   padding-right: var(--padding-x);
 }
 
-#home {
+.App {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+#home, #contact {
   background-color: var(--surface-color);
 }

@@ -21,6 +21,11 @@
   text-decoration: none;
 }
 
+.project-box p, .project-box h4 {
+  margin: 0;
+}
+
+
 .project-box .icon {
   fill: var(--text-color);
   width: 1em;

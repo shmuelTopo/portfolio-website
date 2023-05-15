@@ -5,7 +5,7 @@ import Home from './views/Home'
 import About from './views/About'
 import { useEffect, useRef, useState } from 'react'
 import View from './views/View'
-import SocialMediaLinks from './components/SocialMediaLinks'
+import SocialMediaLinks from './views/Contact'
 import Projects from './views/Projects'
 
 const links = [
@@ -59,6 +59,7 @@ function App() {
       <View id='contact' ref={contactRef}>
         <SocialMediaLinks />
       </View>
+
     </main>
   )
 }
