@@ -27,12 +27,12 @@ function SocialMediaLinks() {
 
       <ul className='social-list'>
         <li>
-          <a href='https://github.com/utsav-devadiga' target='_blank' rel='noreferrer' title='GitHub'>
+          <a href='https://github.com/shmuelTopo' target='_blank' rel='noreferrer' title='GitHub'>
             <GitHubIcon className='social-list-icon' />
           </a>
         </li>
         <li>
-          <a href='https://www.linkedin.com/in/utsav-devadiga-a6b143179/' target='_blank' rel='noreferrer' title='Linkedin'>
+          <a href='https://linkedin.com/in/shmuel-topo' target='_blank' rel='noreferrer' title='Linkedin'>
             <LinkedinIcon className='social-list-icon' />
           </a>
         </li>
