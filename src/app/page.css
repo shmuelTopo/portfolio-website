@@ -1,0 +1,14 @@
+.App > * {
+  padding-left: var(--padding-x);
+  padding-right: var(--padding-x);
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+#home, #contact {
+  background-color: var(--surface-color);
+}

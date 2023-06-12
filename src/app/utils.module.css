@@ -1,0 +1,8 @@
+.container {
+  max-width: var(--max-width);
+  margin: auto;
+}
+
+.view {
+  scroll-margin-top: calc(var(--navbar-height) + 0.5em);
+}

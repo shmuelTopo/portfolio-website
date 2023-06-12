@@ -1,5 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import './Contact.css'
-
+import Image from 'next/image'
 import { MailIcon, GitHubIcon, LinkedinIcon, PhoneIcon } from '../images/Icons'
 function SocialMediaLinks() {
   return (
@@ -22,6 +23,8 @@ function SocialMediaLinks() {
         <img
           src='https://media.licdn.com/dms/image/C4D03AQF986mMkFtMxQ/profile-displayphoto-shrink_800_800/0/1646231567041?e=1689811200&v=beta&t=TZusQXA6RCDYh3wTNPfOrSHmonsaHVdISsia_6j9fDk'
           alt='shmuel'
+          width={100}
+          height={100}
         />
       </div>
 

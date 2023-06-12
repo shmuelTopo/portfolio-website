@@ -85,6 +85,10 @@ export const techItems = [
     icon: Icons.ReactIcon
   },
   {
+    name: "NextJS",
+    icon: Icons.NextJsIcon
+  },
+  {
     name: 'Svelte',
     icon: Icons.SvelteIcon
   }

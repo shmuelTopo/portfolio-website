@@ -1,13 +1,16 @@
-import { forwardRef } from "react";
+import utils from "../app/utils.module.css";
 
-const View = forwardRef<HTMLElement, any>((props, ref) => {
+export default function View({
+  children,
+  id,
+}: {
+  id: string;
+  children: JSX.Element[] | JSX.Element;
+}) {
   return (
-    <section ref={ref} className="view" id={props.id}>
-      <div className="container">
-        {props.children}
-      </div>
+    
+    <section id={id} className={utils.view}>
+      <div className={utils.container}>{children}</div>
     </section>
   );
-});
-
-export default View;
+}

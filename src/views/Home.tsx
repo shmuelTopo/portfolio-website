@@ -2,6 +2,7 @@ import './Home.css'
 import { DownloadIcon } from '../images/Icons'
 
 const Home = () => {
+
   return (
     <div className='home'>
       <h1>

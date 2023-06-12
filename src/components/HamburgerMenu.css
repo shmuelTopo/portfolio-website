@@ -55,7 +55,7 @@
   color: var(--text-color);
   background-color: var(--background-color);
 
-  transition: height 0.3s ease, visibility 0.3s ease, opacity 0.3s ease;
+  transition: 0.2s;
 }
 
 .menu.open {
@@ -77,22 +77,17 @@
   font-size: 1.2em;
 }
 
-.menu a,
 .menu li {
   display: inline-block;
   width: 100%;
-}
-
-.menu a {
-  color: inherit;
-  text-decoration: none;
+  cursor: pointer;
   font-weight: bold;
   padding: 0.6em;
   border-radius: 0.5em;
 }
 
-.menu li a:hover,
-.selected a {
+.menu li:hover,
+.selected {
   color: white;
   background-color: var(--primary-color);
 }

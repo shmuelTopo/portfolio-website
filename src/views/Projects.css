@@ -31,7 +31,8 @@
   width: 1em;
 }
 
-.project-box img {
+.project-box img, .project-box video {
+  height: auto;
 max-width: 100%;}
 
 .project-box li, .project-box p {
@@ -55,6 +56,10 @@ max-width: 100%;}
   flex: 1;
   font-size: 1.7em;
   margin: 0;
+}
+
+.project-title h4 {
+  text-decoration: underline;
 }
 
 .project-title-and-links a {
